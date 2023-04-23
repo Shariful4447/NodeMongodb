@@ -1,0 +1,15 @@
+{
+  "name": "nodemongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shariful islam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-monitor": "^0.3.11"
+  }
+}
