@@ -1,11 +1,17 @@
 
 
 const express = require('express');
+const cors = require('cors')
+const bodyParser = require('body-parser')
 const app=express();
+
+app.use(cors());
+
+app.use(bodyParser.json());
 
 const users=['abu', 'bakar', 'rahim', 'karim', 'jabbar', 'sabana' ];
 
-
+//get
 app.get('/', (req, res) =>{
 
     const productDetails={
@@ -15,10 +21,20 @@ app.get('/', (req, res) =>{
     res.send(productDetails);
 });
 
-app.get('/user/:id', (req, res) =>{
-    const userId = req.params.id;
-    const name=users[userId];
-    res.send(name);
+app.get('/user/id', (req, res) =>{
+    const id = req.params.id;
+    const name=users[id];
+    res.send({id, name});
+
+});
+
+//post
+
+app.post('/adduser', (req, res) =>{
+  //Save to database
+    const user = req.body;
+    user.id=8;
+    res.send(user);
 
 });
 app.listen(3000, ()=>console.log('listening on port 3000'));
