@@ -21,7 +21,7 @@ const users=['abu', 'bakar', 'rahim', 'karim', 'jabbar', 'sabana' ];
 //     res.send(productDetails);
 // });
 
-app.get('/users/id', (req, res) =>{
+app.get('/users/:id', (req, res) =>{
     const id = req.params.id;
     const name=users[id];
     res.send({id, name});
@@ -33,7 +33,7 @@ app.get('/users/id', (req, res) =>{
 app.post('/adduser', (req, res) =>{
   //Save to database
     const user = req.body;
-    user.id=8;
+    user.id=55;
     res.send(user);
 
 });
