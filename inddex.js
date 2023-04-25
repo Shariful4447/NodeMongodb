@@ -12,16 +12,16 @@ app.use(bodyParser.json());
 const users=['abu', 'bakar', 'rahim', 'karim', 'jabbar', 'sabana' ];
 
 //get
-app.get('/', (req, res) =>{
+// app.get('/', (req, res) =>{
 
-    const productDetails={
-        product:'ada',
-        price: 200
-    }
-    res.send(productDetails);
-});
+//     const productDetails={
+//         product:'ada',
+//         price: 200
+//     }
+//     res.send(productDetails);
+// });
 
-app.get('/user/id', (req, res) =>{
+app.get('/users/id', (req, res) =>{
     const id = req.params.id;
     const name=users[id];
     res.send({id, name});
